@@ -1,11 +1,10 @@
-const tailwindcss = require('tailwindcss');
-const autoprefixer = require('autoprefixer');
-
 const config = {
 	plugins: [
-		tailwindcss(),
-		autoprefixer
+		require('tailwindcss'),
+		require('postcss-nested'),
+		require('autoprefixer'),
+		require('cssnano')({ preset: 'default' })
 	]
-};
+}
 
 module.exports = config;
