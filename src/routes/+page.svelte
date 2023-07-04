@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { OfferJPG } from '$lib/assets';
-	// import { CardProduct } from '$lib/components';
+	import { BannerCoupleJPG, BannerWinterJPG, OfferJPG } from '$lib/assets';
 	import {
+		BannerLayout,
 		BrandsLayout,
 		CuratedPicksLayout,
 		NewsletterLayout,
@@ -11,32 +11,28 @@
 
 	export let data;
 
+	const banners = [
+		{
+			title: 'Level up your style with our winter collections',
+			image: BannerWinterJPG,
+			link: '/shop/winter-edition'
+		},
+		{
+			title: 'Check out our new casual collections',
+			image: BannerCoupleJPG,
+			link: '/shop/casual'
+		}
+	];
+
 	const offer = {
 		description: '35% off only this Friday and get special gift',
 		image: OfferJPG
 	};
 </script>
 
-<!-- <ul>
-	{#each data.products.data as product (product._id)}
-		<li>
-			<CardProduct {product} />
-		</li>
-	{/each}
-</ul> -->
-
+<BannerLayout {banners} />
 <BrandsLayout brands={data.brands} />
 <USPLayout />
 <CuratedPicksLayout />
 <OfferLayout {offer} />
 <NewsletterLayout />
-
-<style lang="scss">
-	// ul {
-	// 	@apply grid grid-flow-col gap-4;
-
-	// 	& > li {
-	// 		@apply col-auto;
-	// 	}
-	// }
-</style>

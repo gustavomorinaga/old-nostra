@@ -1,3 +1,4 @@
+export * from './banner';
 export * from './brands';
 export * from './curated-picks';
 export * from './footer';

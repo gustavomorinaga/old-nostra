@@ -99,7 +99,7 @@
 			@apply mx-auto max-w-6xl text-base-content;
 
 			& > div {
-				@apply footer;
+				@apply footer pb-4;
 
 				& > div {
 					& > a.logo {

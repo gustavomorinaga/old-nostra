@@ -28,7 +28,7 @@
 
 <section class="curated-picks">
 	<header>
-		<h2>Curated Picks</h2>
+		<h2>Curated picks</h2>
 	</header>
 
 	<ul>
