@@ -28,7 +28,7 @@
 
 		& > figure {
 			& > img {
-				height: auto !important;
+				@apply w-full;
 			}
 		}
 
