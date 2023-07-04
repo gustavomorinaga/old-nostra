@@ -1,0 +1,21 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource-variable/roboto-slab';
+@import '@fontsource-variable/sora';
+
+body {
+	@apply subpixel-antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@apply font-semibold font-heading;
+}
+
+hr {
+	@apply border-none;
+}
