@@ -27,7 +27,7 @@ const config = {
 					info: '#3abff8',
 					success: '#36d399',
 					warning: '#f97316',
-					error: '#f87272',
+					error: '#cc0d01',
 
 					'--btn-text-case': 'normal'
 				}

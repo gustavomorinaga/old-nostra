@@ -23,10 +23,12 @@
 
 <style lang="scss">
 	article.curated-pick {
-		@apply card h-72 overflow-hidden from-neutral shadow-md
+		@apply card overflow-hidden from-neutral shadow-md
 		before:hidden after:absolute after:inset-0 after:bg-gradient-to-t after:from-primary-focus;
 
 		& > figure {
+			aspect-ratio: 14 / 15;
+
 			& > img {
 				@apply w-full;
 			}

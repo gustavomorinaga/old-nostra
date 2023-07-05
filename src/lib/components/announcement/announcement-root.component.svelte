@@ -10,7 +10,7 @@
 
 <style lang="scss">
 	section.announcement {
-		@apply bg-primary p-2;
+		@apply sticky top-0 z-50 bg-primary p-2;
 
 		& > div {
 			@apply mx-auto flex max-w-6xl items-center px-4;

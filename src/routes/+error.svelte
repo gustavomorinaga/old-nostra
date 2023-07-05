@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { NotFoundSVG } from '$lib/assets';
+	import { balancer } from 'svelte-action-balancer';
 </script>
 
 <section class="error">
@@ -8,8 +8,10 @@
 		<img src={NotFoundSVG} alt="Not Found" />
 
 		<div>
-			<h1>I have bad news for you</h1>
-			<p>The page are you looking for might be removed or is temporarily unavailable</p>
+			<h1 use:balancer>I have bad news for you</h1>
+			<p use:balancer>
+				The page are you looking for might be removed or is temporarily unavailable
+			</p>
 
 			<a href="/">Come Home</a>
 		</div>

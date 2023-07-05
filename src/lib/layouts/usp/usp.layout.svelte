@@ -53,7 +53,7 @@
 			}
 
 			& > blockquote {
-				@apply my-auto block border-l-2 border-base-300 p-4 text-base-content;
+				@apply my-auto block border-l-2 border-base-content p-4 text-base-content;
 			}
 		}
 

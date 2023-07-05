@@ -4,19 +4,32 @@
 	const routes = [
 		{
 			name: 'Shop',
-			path: '/shop'
+			paths: [
+				{
+					name: 'Men',
+					link: '/shop/men'
+				},
+				{
+					name: 'Women',
+					link: '/shop/women'
+				},
+				{
+					name: 'Casual',
+					link: '/shop/casual'
+				}
+			]
 		},
 		{
 			name: 'Most wanted',
-			path: '/most-wanted'
+			link: '/most-wanted'
 		},
 		{
 			name: 'New arrival',
-			path: '/new-arrival'
+			link: '/new-arrival'
 		},
 		{
 			name: 'Brands',
-			path: '/brands'
+			link: '/brands'
 		}
 	];
 </script>
@@ -34,7 +47,20 @@
 		<ul class="navbar-center">
 			{#each routes as route}
 				<li>
-					<a href={route.path}>{route.name}</a>
+					{#if !route?.paths?.length}
+						<a href={route.link}>{route.name}</a>
+					{:else}
+						<details>
+							<summary>{route.name}</summary>
+							<ul>
+								{#each route.paths as path}
+									<li>
+										<a href={path.link}>{path.name}</a>
+									</li>
+								{/each}
+							</ul>
+						</details>
+					{/if}
 				</li>
 			{/each}
 		</ul>
@@ -45,10 +71,10 @@
 				<input type="text" placeholder="Search" />
 			</label>
 
-			<button>
+			<button title="Cart">
 				<iconify-icon icon="ph:shopping-cart" />
 			</button>
-			<button>
+			<button title="Account">
 				<iconify-icon icon="ph:user" />
 			</button>
 		</div>
@@ -57,6 +83,8 @@
 
 <style lang="scss">
 	header {
+		@apply sticky top-0 z-50 bg-base-100;
+
 		& nav {
 			@apply navbar mx-auto max-w-6xl justify-between px-4;
 

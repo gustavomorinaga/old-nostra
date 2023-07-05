@@ -1,62 +1,65 @@
 <script lang="ts">
-	import { CarouselRoot, CarouselSlide } from '$lib/components';
-	import { balancer } from 'svelte-action-balancer';
+	import { CardBanner, CarouselRoot, CarouselSlide } from '$lib/components';
+	import type { ComponentProps } from 'svelte';
 
 	export let banners: { title: string; image: string; link: string }[] = [];
+
+	const options: ComponentProps<CarouselRoot>['options'] = {
+		centeredSlides: true,
+		loop: true,
+		slidesPerView: 1,
+		autoHeight: false,
+		grabCursor: false,
+		allowTouchMove: false,
+		effect: 'fade',
+		navigation: {
+			enabled: true
+		},
+		pagination: {
+			clickable: true
+		},
+		autoplay: {
+			delay: 5000
+		},
+		injectStyles: [
+			`.swiper-button-prev, .swiper-button-next {
+				--swiper-navigation-size: 1rem;
+				top: 1.5rem;
+				left: auto;
+				background-color: hsl(var(--af) / 1);
+				padding: 0.75rem 1rem;
+			}
+
+			.swiper-button-prev {
+				right: 3.6rem;
+				border: solid hsl(var(--b3) / 1);
+				border-width: 0 2px 0 0;
+				border-radius: 0.375rem 0 0 0.375rem;
+			}
+
+			.swiper-button-next {
+				right: 1rem;
+				border-radius: 0 0.375rem 0.375rem 0;
+			}`,
+			`.swiper-pagination {
+				--swiper-pagination-color: hsl(var(--af) / 1);
+				--swiper-pagination-bullet-inactive-color: hsl(var(--b3) / 1);
+				--swiper-pagination-bullet-inactive-opacity: 0.5;
+			}`
+		]
+	};
 </script>
 
-<CarouselRoot>
+<CarouselRoot class="banners" {options}>
 	{#each banners as banner}
 		<CarouselSlide>
-			<article class="banner-content image-full">
-				<figure>
-					<img src={banner.image} alt={banner.title} />
-				</figure>
-
-				<div class="card-body">
-					<h2 use:balancer>{banner.title}</h2>
-
-					<div class="card-actions">
-						<a href={banner.link}>
-							Shop now
-							<iconify-icon icon="ph:arrow-right" />
-						</a>
-					</div>
-				</div>
-			</article>
+			<CardBanner {banner} />
 		</CarouselSlide>
 	{/each}
 </CarouselRoot>
 
 <style lang="scss">
-	article.banner-content {
-		@apply card h-full w-full rounded-none before:pointer-events-none before:hidden
-		after:absolute after:inset-0 after:block after:bg-primary-focus after:opacity-50;
-
-		& > figure {
-			& > img {
-				@apply w-full;
-			}
-		}
-
-		& > div.card-body {
-			@apply items-center justify-center;
-
-			& > h2 {
-				@apply text-5xl font-bold text-white drop-shadow;
-			}
-
-			& > div.card-actions {
-				@apply mt-4;
-
-				& > a {
-					@apply btn-accent btn shadow;
-
-					& > iconify-icon {
-						@apply text-xl;
-					}
-				}
-			}
-		}
+	:global(.banners) {
+		@apply rounded-box shadow-md;
 	}
 </style>

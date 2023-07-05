@@ -31,6 +31,8 @@
 		}
 
 		& > div.card-body {
+			@apply selection:bg-base-100 selection:text-primary;
+
 			& > h5 {
 				@apply card-title text-sm uppercase leading-normal text-base-300;
 			}

@@ -1,9 +1,9 @@
-<swiper-slide>
+<swiper-slide class={$$restProps.class || ''}>
 	<slot />
 </swiper-slide>
 
 <style lang="scss">
 	swiper-slide {
-		@apply flex flex-col items-center justify-center text-center;
+		@apply pointer-events-auto;
 	}
 </style>

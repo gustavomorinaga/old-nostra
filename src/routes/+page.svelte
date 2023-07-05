@@ -4,10 +4,11 @@
 		BannerLayout,
 		BrandsLayout,
 		CuratedPicksLayout,
+		FeaturedProductsLayout,
 		NewsletterLayout,
-		OfferLayout,
 		USPLayout
 	} from '$lib/layouts';
+	import { CardOffer } from '$lib/components';
 
 	export let data;
 
@@ -34,5 +35,6 @@
 <BrandsLayout brands={data.brands} />
 <USPLayout />
 <CuratedPicksLayout />
-<OfferLayout {offer} />
+<FeaturedProductsLayout products={data.products.data} />
+<CardOffer {offer} />
 <NewsletterLayout />
