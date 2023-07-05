@@ -2,7 +2,9 @@
 	import { CardBanner, CarouselRoot, CarouselSlide } from '$lib/components';
 	import type { ComponentProps } from 'svelte';
 
-	export let banners: { title: string; image: string; link: string }[] = [];
+	export let banners: { title: string; image: string; link: string }[];
+
+	const hasBanners = !!banners.length;
 
 	const options: ComponentProps<CarouselRoot>['options'] = {
 		centeredSlides: true,
@@ -50,13 +52,15 @@
 	};
 </script>
 
-<CarouselRoot class="banners" {options}>
-	{#each banners as banner}
-		<CarouselSlide>
-			<CardBanner {banner} />
-		</CarouselSlide>
-	{/each}
-</CarouselRoot>
+{#if hasBanners}
+	<CarouselRoot class="banners" {options}>
+		{#each banners as banner}
+			<CarouselSlide>
+				<CardBanner {banner} />
+			</CarouselSlide>
+		{/each}
+	</CarouselRoot>
+{/if}
 
 <style lang="scss">
 	:global(.banners) {

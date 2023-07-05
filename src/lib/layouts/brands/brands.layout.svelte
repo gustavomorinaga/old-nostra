@@ -1,29 +1,33 @@
 <script lang="ts">
 	import type { IBrand } from '$lib/ts';
 
-	export let brands: IBrand[] = [];
+	export let brands: IBrand[];
+
+	const hasBrands = !!brands.length;
 </script>
 
-<section class="brands">
-	<header>
-		<h2>Brands</h2>
-	</header>
+{#if hasBrands}
+	<section class="brands">
+		<header>
+			<h2>Brands</h2>
+		</header>
 
-	<ul>
-		{#each brands as brand (brand._id)}
-			<li>
-				<a href="/brand/{brand.name}" title={brand.name}>
-					<figure>
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_brand_Adidas.png/640px-Logo_brand_Adidas.png"
-							alt="Brand"
-						/>
-					</figure>
-				</a>
-			</li>
-		{/each}
-	</ul>
-</section>
+		<ul>
+			{#each brands as brand (brand._id)}
+				<li>
+					<a href="/brand/{brand.name}" title={brand.name}>
+						<figure>
+							<img
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_brand_Adidas.png/640px-Logo_brand_Adidas.png"
+								alt="Brand"
+							/>
+						</figure>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
 
 <style lang="scss">
 	section.brands {

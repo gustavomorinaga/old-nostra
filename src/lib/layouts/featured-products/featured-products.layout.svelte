@@ -3,7 +3,9 @@
 	import type { ComponentProps } from 'svelte';
 	import type { IProduct } from '$lib/ts';
 
-	export let products: IProduct[] = [];
+	export let products: IProduct[];
+
+	const hasProducts = !!products.length;
 
 	const options: ComponentProps<CarouselRoot>['options'] = {
 		centeredSlides: false,
@@ -51,21 +53,23 @@
 	};
 </script>
 
-<section class="featured-products">
-	<header>
-		<h2>Featured products</h2>
-	</header>
+{#if hasProducts}
+	<section class="featured-products">
+		<header>
+			<h2>Featured products</h2>
+		</header>
 
-	<CarouselRoot class="products" {options}>
-		{#each products as product (product._id)}
-			<CarouselSlide>
-				<a href="/product/{product.slug}">
-					<CardProduct {product} />
-				</a>
-			</CarouselSlide>
-		{/each}
-	</CarouselRoot>
-</section>
+		<CarouselRoot class="products" {options}>
+			{#each products as product (product._id)}
+				<CarouselSlide>
+					<a href="/product/{product.slug}">
+						<CardProduct {product} />
+					</a>
+				</CarouselSlide>
+			{/each}
+		</CarouselRoot>
+	</section>
+{/if}
 
 <style lang="scss">
 	section.featured-products {
