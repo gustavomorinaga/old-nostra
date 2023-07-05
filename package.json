@@ -1,8 +1,11 @@
 {
-	"name": "svelte-ecommerce",
+	"name": "nostra",
 	"version": "0.0.1",
 	"type": "module",
 	"private": true,
+	"license": "MIT",
+	"author": "Gustavo Morinaga <me@gustavomorinaga.dev>",
+	"description": "An ecommerce made with SvelteKit and TailwindCSS",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
