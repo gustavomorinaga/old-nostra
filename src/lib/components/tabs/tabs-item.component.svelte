@@ -3,6 +3,12 @@
 	export let link: string;
 </script>
 
-<a class="tab" class:tab-active={active} href={link}>
+<a class="tab {$$restProps.class || ''}" class:tab-active={active} href={link}>
 	<slot />
 </a>
+
+<style lang="scss">
+	a.tab {
+		@apply transition-colors hover:bg-base-200;
+	}
+</style>

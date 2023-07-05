@@ -33,12 +33,12 @@
 		<div class="infos">
 			<span class="info">
 				<iconify-icon icon="ph:envelope" />
-				<span>gustavo.morinaga27@gmail.com</span>
+				<span>test@gustavomorinaga.dev</span>
 			</span>
 
 			<span class="info">
 				<iconify-icon icon="ph:phone" />
-				<span>(11) 997692-2927</span>
+				<span>(11) 98506-5227</span>
 			</span>
 		</div>
 	</div>

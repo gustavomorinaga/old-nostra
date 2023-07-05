@@ -33,10 +33,18 @@
 </script>
 
 <ProfileLayout />
-<TabsRoot>
+<TabsRoot class="account-tabs">
 	{#each tabs as tab}
 		<TabsItem link={tab.link} active={data.currentPathname === tab.link}>
 			{tab.name}
 		</TabsItem>
 	{/each}
 </TabsRoot>
+
+<slot />
+
+<style lang="scss">
+	:global(.account-tabs) {
+		@apply sticky top-20;
+	}
+</style>
