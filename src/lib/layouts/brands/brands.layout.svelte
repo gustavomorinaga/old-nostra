@@ -12,7 +12,14 @@
 	<ul>
 		{#each brands as brand (brand._id)}
 			<li>
-				<span>{brand.name}</span>
+				<a href="/brand/{brand.name}" title={brand.name}>
+					<figure>
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_brand_Adidas.png/640px-Logo_brand_Adidas.png"
+							alt="Brand"
+						/>
+					</figure>
+				</a>
 			</li>
 		{/each}
 	</ul>
@@ -32,6 +39,18 @@
 
 		& > ul {
 			@apply menu menu-horizontal menu-lg;
+
+			& > li {
+				& > a {
+					& > figure {
+						@apply aspect-video h-16 w-full overflow-hidden;
+
+						& > img {
+							@apply mx-auto h-full;
+						}
+					}
+				}
+			}
 		}
 	}
 </style>
