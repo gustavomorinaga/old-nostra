@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CardProduct, CarouselRoot, CarouselSlide } from '$lib/components';
-	import type { ComponentProps } from 'svelte';
 	import type { IProduct } from '$lib/ts';
+	import type { ComponentProps } from 'svelte';
 
 	export let products: IProduct[];
 
@@ -36,12 +36,12 @@
 
 			.swiper-button-prev {
 				right: 2.6rem;
-				border-radius: 0.375rem 0 0 0.375rem;
+				border-radius: 0.5rem 0 0 0.5rem;
 			}
 
 			.swiper-button-next {
 				right: 0;
-				border-radius: 0 0.375rem 0.375rem 0;
+				border-radius: 0 0.5rem 0.5rem 0;
 			}`,
 			`.swiper-scrollbar {
 				--swiper-scrollbar-size: 0.5rem;

@@ -96,7 +96,7 @@
 		@apply mt-16 bg-base-200 p-10;
 
 		& > div.wrapper {
-			@apply mx-auto max-w-6xl text-base-content;
+			@apply mx-auto max-w-6xl text-base-content text-opacity-75;
 
 			& > div {
 				@apply footer pb-4;
@@ -115,7 +115,7 @@
 					}
 
 					& > span {
-						@apply footer-title font-heading;
+						@apply footer-title font-heading opacity-100;
 					}
 
 					& > ul {

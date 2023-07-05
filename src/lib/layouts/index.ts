@@ -5,4 +5,5 @@ export * from './featured-products';
 export * from './footer';
 export * from './navbar';
 export * from './newsletter';
+export * from './profile';
 export * from './usp';

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { BannerCoupleJPG, BannerWinterJPG, OfferJPG } from '$lib/assets';
+	import { CardOffer } from '$lib/components';
 	import {
 		BannerLayout,
 		BrandsLayout,
@@ -8,7 +9,6 @@
 		NewsletterLayout,
 		USPLayout
 	} from '$lib/layouts';
-	import { CardOffer } from '$lib/components';
 
 	export let data;
 
@@ -30,6 +30,14 @@
 		image: OfferJPG
 	};
 </script>
+
+<svelte:head>
+	<title>Nostra</title>
+	<meta
+		name="description"
+		content="Specializes in providing high-quality, stylish products for your wardrobe"
+	/>
+</svelte:head>
 
 <BannerLayout {banners} />
 <BrandsLayout brands={data.brands} />

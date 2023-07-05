@@ -44,7 +44,7 @@
 				}
 
 				& > iconify-icon {
-					@apply text-lg text-base-content;
+					@apply text-lg;
 				}
 
 				& > input {
@@ -58,7 +58,7 @@
 		}
 
 		& > footer {
-			@apply flex flex-col;
+			@apply flex flex-col text-base-content text-opacity-75;
 
 			& a {
 				@apply link font-semibold;

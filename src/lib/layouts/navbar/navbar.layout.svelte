@@ -71,12 +71,12 @@
 				<input type="text" placeholder="Search" />
 			</label>
 
-			<button title="Cart">
+			<a href="/cart" title="Cart">
 				<iconify-icon icon="ph:shopping-cart" />
-			</button>
-			<button title="Account">
+			</a>
+			<a href="/account" title="Account">
 				<iconify-icon icon="ph:user" />
-			</button>
+			</a>
 		</div>
 	</nav>
 </header>
@@ -115,20 +115,16 @@
 						@apply join-item;
 					}
 
-					& > iconify-icon {
-						@apply text-base-content;
-					}
-
 					& > input {
 						@apply input-sm outline-none;
 					}
 				}
 
-				& > button {
+				& > a {
 					@apply btn-ghost btn-square btn-sm btn w-fit px-2;
 
 					& > iconify-icon {
-						@apply text-xl text-base-content;
+						@apply text-base;
 					}
 				}
 			}

@@ -36,12 +36,12 @@
 				right: 3.6rem;
 				border: solid hsl(var(--b3) / 1);
 				border-width: 0 2px 0 0;
-				border-radius: 0.375rem 0 0 0.375rem;
+				border-radius: 0.5rem 0 0 0.5rem;
 			}
 
 			.swiper-button-next {
 				right: 1rem;
-				border-radius: 0 0.375rem 0.375rem 0;
+				border-radius: 0 0.5rem 0.5rem 0;
 			}`,
 			`.swiper-pagination {
 				--swiper-pagination-color: hsl(var(--af) / 1);

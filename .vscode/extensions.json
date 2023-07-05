@@ -4,7 +4,6 @@
 		"DavidAnson.vscode-markdownlint",
 		"dbaeumer.vscode-eslint",
 		"EditorConfig.EditorConfig",
-		"esbenp.prettier-vscode",
 		"formulahendry.auto-complete-tag",
 		"meganrogge.template-string-converter",
 		"mikestead.dotenv",

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { MenJPG } from '$lib/assets';
-	import { currencyFormatter } from '$lib/utils';
 	import type { IProduct } from '$lib/ts';
+	import { currencyFormatter } from '$lib/utils';
 
 	export let product: IProduct;
 	const { name, variants } = product;
@@ -60,7 +60,7 @@
 
 <style lang="scss">
 	article.product {
-		@apply card card-compact rounded-none p-0;
+		@apply card card-compact rounded-none bg-base-100 p-0;
 
 		& > figure {
 			@apply rounded-box shadow;
