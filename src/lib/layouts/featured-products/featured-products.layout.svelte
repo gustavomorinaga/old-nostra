@@ -26,7 +26,7 @@
 			}`,
 			`.swiper-button-prev, .swiper-button-next {
 				--swiper-navigation-size: 1rem;
-				top: -5rem;
+				top: -3.75rem;
 				left: auto;
 				background-color: hsl(var(--af) / 1);
 				padding: 0.75rem 1rem;
