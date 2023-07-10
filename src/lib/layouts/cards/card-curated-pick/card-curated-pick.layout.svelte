@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Card } from '$lib/components';
+
 	export let pick: {
 		title: string;
 		image: string;
@@ -6,22 +8,20 @@
 	};
 </script>
 
-<article class="curated-pick image-full">
-	<figure>
-		<img src={pick.image} alt={pick.title} />
-	</figure>
+<Card class="curated-pick image-full" as="article" let:C>
+	<C.Figure src={pick.image} alt={pick.title} />
 
-	<div class="card-body">
-		<div class="card-actions">
+	<C.Body>
+		<C.Actions>
 			<a href={pick.link}>
 				{pick.title}
 				<iconify-icon icon="ph:arrow-right" />
 			</a>
-		</div>
-	</div>
-</article>
+		</C.Actions>
+	</C.Body>
+</Card>
 
-<style lang="scss">
+<style lang="scss" global>
 	article.curated-pick {
 		@apply card overflow-hidden from-neutral shadow-md
 		before:hidden after:absolute after:inset-0 after:bg-gradient-to-t after:from-primary-focus;
@@ -34,8 +34,8 @@
 			}
 		}
 
-		& > div.card-body {
-			& > div.card-actions {
+		& > .card-body {
+			& > .card-actions {
 				@apply mt-auto;
 
 				& > a {

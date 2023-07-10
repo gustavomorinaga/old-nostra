@@ -23,7 +23,7 @@
 				</figure>
 			</div>
 
-			<h1>Gustavo Morinaga</h1>
+			<span class="name">Gustavo Morinaga</span>
 
 			<button title="Options">
 				<iconify-icon icon="ph:dots-three-outline-vertical-fill" />
@@ -82,8 +82,8 @@
 					}
 				}
 
-				& > h1 {
-					@apply text-xl;
+				& > span.name {
+					@apply card-title font-heading;
 				}
 
 				& > button {

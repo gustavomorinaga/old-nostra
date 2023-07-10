@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { MenJPG } from '$lib/assets';
-	import type { IProduct } from '$lib/ts';
+	import { Card } from '$lib/components';
 	import { currencyFormatter } from '$lib/utils';
+	import type { IProduct } from '$lib/ts';
 
 	export let product: IProduct;
 	const { name, variants } = product;
@@ -12,16 +13,14 @@
 		(variants?.at(0)?.originalPrice as number) > (variants?.at(0)?.price as number);
 </script>
 
-<article class="product">
-	<figure>
-		<img src={MenJPG} alt={name} />
-	</figure>
+<Card class="product" as="article" let:C>
+	<C.Figure src={MenJPG} alt={name} />
 
 	{#if hasDiscount}
 		<span class="badge">SALE</span>
 	{/if}
 
-	<div class="card-body">
+	<C.Body>
 		<div>
 			<h3 class="name" title={name}>{name}</h3>
 
@@ -50,15 +49,15 @@
 			{/if}
 		</div>
 
-		<div class="card-actions">
+		<C.Actions>
 			<button title="Add to cart" on:click|preventDefault|stopPropagation>
 				<iconify-icon icon="ph:shopping-cart" />
 			</button>
-		</div>
-	</div>
-</article>
+		</C.Actions>
+	</C.Body>
+</Card>
 
-<style lang="scss">
+<style lang="scss" global>
 	article.product {
 		@apply card card-compact rounded-none bg-base-100 p-0;
 

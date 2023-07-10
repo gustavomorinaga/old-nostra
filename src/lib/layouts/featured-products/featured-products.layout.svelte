@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { CardProduct, CarouselRoot, CarouselSlide } from '$lib/components';
+	import { Carousel } from '$lib/components';
+	import { CardProduct } from '$lib/layouts';
 	import type { IProduct } from '$lib/ts';
-	import type { ComponentProps } from 'svelte';
+	import type { SwiperOptions } from 'swiper/types';
 
 	export let products: IProduct[];
 
 	const hasProducts = !!products.length;
 
-	const options: ComponentProps<CarouselRoot>['options'] = {
+	const options: SwiperOptions = {
 		centeredSlides: false,
 		loop: false,
 		slidesPerView: 3,
@@ -59,15 +60,15 @@
 			<h2>Featured products</h2>
 		</header>
 
-		<CarouselRoot class="products" {options}>
+		<Carousel class="products" {options} let:C>
 			{#each products as product (product._id)}
-				<CarouselSlide>
+				<C.Slide>
 					<a href="/product/{product.slug}">
 						<CardProduct {product} />
 					</a>
-				</CarouselSlide>
+				</C.Slide>
 			{/each}
-		</CarouselRoot>
+		</Carousel>
 	</section>
 {/if}
 

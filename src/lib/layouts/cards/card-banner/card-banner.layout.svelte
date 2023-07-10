@@ -1,27 +1,26 @@
 <script lang="ts">
+	import { Card } from '$lib/components';
 	import { balancer } from 'svelte-action-balancer';
 
 	export let banner: { title: string; image: string; link: string };
 </script>
 
-<article class="banner image-full">
-	<figure>
-		<img src={banner.image} alt={banner.title} />
-	</figure>
+<Card class="banner image-full" as="article" let:C>
+	<C.Figure src={banner.image} alt={banner.title} />
 
-	<div class="card-body">
+	<C.Body>
 		<h2 use:balancer>{banner.title}</h2>
 
-		<div class="card-actions">
+		<C.Actions>
 			<a href={banner.link}>
 				Shop now
 				<iconify-icon icon="ph:arrow-right" />
 			</a>
-		</div>
-	</div>
-</article>
+		</C.Actions>
+	</C.Body>
+</Card>
 
-<style lang="scss">
+<style lang="scss" global>
 	article.banner {
 		@apply card h-full w-full rounded-none before:pointer-events-none before:hidden
 		after:absolute after:inset-0 after:block after:bg-primary-focus after:opacity-50;

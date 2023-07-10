@@ -1,1 +1,5 @@
-<h2>Orders Page</h2>
+<script lang="ts">
+	import { OrderHistoryLayout } from '$lib/layouts';
+</script>
+
+<OrderHistoryLayout />

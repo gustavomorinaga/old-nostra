@@ -1,16 +1,12 @@
 <script>
 	import { slide } from 'svelte/transition';
-
-	export let show = true;
 </script>
 
-{#if show}
-	<section class="announcement" transition:slide>
-		<div>
-			<slot />
-		</div>
-	</section>
-{/if}
+<section class="announcement" transition:slide>
+	<div>
+		<slot />
+	</div>
+</section>
 
 <style lang="scss">
 	section.announcement {

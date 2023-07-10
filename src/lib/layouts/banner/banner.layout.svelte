@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { CardBanner, CarouselRoot, CarouselSlide } from '$lib/components';
-	import type { ComponentProps } from 'svelte';
+	import { Carousel } from '$lib/components';
+	import { CardBanner } from '$lib/layouts';
+	import type { SwiperOptions } from 'swiper/types';
 
 	export let banners: { title: string; image: string; link: string }[];
 
 	const hasBanners = !!banners.length;
 
-	const options: ComponentProps<CarouselRoot>['options'] = {
+	const options: SwiperOptions = {
 		centeredSlides: true,
 		loop: true,
 		slidesPerView: 1,
@@ -53,17 +54,17 @@
 </script>
 
 {#if hasBanners}
-	<CarouselRoot class="banners" {options}>
+	<Carousel class="banners" {options} let:C>
 		{#each banners as banner}
-			<CarouselSlide>
+			<C.Slide>
 				<CardBanner {banner} />
-			</CarouselSlide>
+			</C.Slide>
 		{/each}
-	</CarouselRoot>
+	</Carousel>
 {/if}
 
-<style lang="scss">
-	:global(.banners) {
+<style lang="scss" global>
+	.banners {
 		@apply rounded-box shadow-md;
 	}
 </style>

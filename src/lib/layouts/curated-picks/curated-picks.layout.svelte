@@ -1,6 +1,6 @@
 <script>
 	import { BestSellerJPG, CasualJPG, MenJPG, WomenJPG } from '$lib/assets';
-	import { CardCuratedPick } from '$lib/components';
+	import { CardCuratedPick } from '$lib/layouts';
 
 	const curatedPicks = [
 		{

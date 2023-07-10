@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { BannerCoupleJPG, BannerWinterJPG, OfferJPG } from '$lib/assets';
-	import { CardOffer } from '$lib/components';
 	import {
 		BannerLayout,
 		BrandsLayout,
+		CardOffer,
 		CuratedPicksLayout,
 		FeaturedProductsLayout,
 		NewsletterLayout,

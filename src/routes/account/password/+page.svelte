@@ -1,1 +1,5 @@
-<h2>Password Page</h2>
+<script lang="ts">
+	import { ManagePasswordLayout } from '$lib/layouts';
+</script>
+
+<ManagePasswordLayout />

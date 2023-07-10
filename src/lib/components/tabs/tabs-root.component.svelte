@@ -4,6 +4,6 @@
 
 <style lang="scss">
 	div.tabs {
-		@apply mb-4 gap-1 border border-base-200 bg-base-100;
+		@apply z-10 mb-4 gap-1 border border-base-200 bg-base-100;
 	}
 </style>

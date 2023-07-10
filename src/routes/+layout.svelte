@@ -1,23 +1,23 @@
 <script>
-	import { AnnouncementAction, AnnouncementContent, AnnouncementRoot } from '$lib/components';
-	import { FooterLayout, NavbarLayout } from '$lib/layouts';
 	import 'iconify-icon';
 	import '../lib/styles/app.style.scss';
+	import { Announcement } from '$lib/components';
+	import { FooterLayout, NavbarLayout } from '$lib/layouts';
 
 	let showAnnouncement = true;
 
 	const handleAnnouncement = () => (showAnnouncement = !showAnnouncement);
 </script>
 
-<AnnouncementRoot show={showAnnouncement}>
-	<AnnouncementContent>
+<Announcement let:A show={showAnnouncement}>
+	<A.Content>
 		Sign up and <strong>GET 20% OFF</strong> for your first order.
 		<a href="/signup">Sign up now</a>
-	</AnnouncementContent>
-	<AnnouncementAction on:click={handleAnnouncement} title="Close">
+	</A.Content>
+	<A.Action on:click={handleAnnouncement} title="Close">
 		<iconify-icon icon="ph:x" />
-	</AnnouncementAction>
-</AnnouncementRoot>
+	</A.Action>
+</Announcement>
 
 <NavbarLayout />
 

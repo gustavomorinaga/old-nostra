@@ -89,6 +89,9 @@ devDependencies:
   svelte-check:
     specifier: 3.4.4
     version: 3.4.4(postcss-load-config@4.0.1)(postcss@8.4.24)(sass@1.63.6)(svelte@4.0.1)
+  svelte-preprocess:
+    specifier: ^5.0.4
+    version: 5.0.4(postcss-load-config@4.0.1)(postcss@8.4.24)(sass@1.63.6)(svelte@4.0.1)(typescript@5.1.6)
   swiper:
     specifier: 10.0.3
     version: 10.0.3

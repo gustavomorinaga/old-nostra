@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TabsItem, TabsRoot } from '$lib/components';
+	import { Tabs } from '$lib/components';
 	import { ProfileLayout } from '$lib/layouts';
 
 	export let data;
@@ -33,18 +33,12 @@
 </script>
 
 <ProfileLayout />
-<TabsRoot class="account-tabs">
+<Tabs class="account-tabs" let:T>
 	{#each tabs as tab}
-		<TabsItem link={tab.link} active={data.currentPathname === tab.link}>
+		<T.Item link={tab.link} active={data.currentPathname === tab.link}>
 			{tab.name}
-		</TabsItem>
+		</T.Item>
 	{/each}
-</TabsRoot>
+</Tabs>
 
 <slot />
-
-<style lang="scss">
-	:global(.account-tabs) {
-		@apply sticky top-20;
-	}
-</style>

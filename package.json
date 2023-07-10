@@ -47,6 +47,7 @@
 		"svelte": "4.0.1",
 		"svelte-action-balancer": "1.0.4",
 		"svelte-check": "3.4.4",
+		"svelte-preprocess": "^5.0.4",
 		"swiper": "10.0.3",
 		"tailwindcss": "3.3.2",
 		"tslib": "2.6.0",

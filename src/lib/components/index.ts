@@ -1,4 +1,4 @@
 export * from './announcement';
-export * from './cards';
+export * from './card';
 export * from './carousel';
 export * from './tabs';
