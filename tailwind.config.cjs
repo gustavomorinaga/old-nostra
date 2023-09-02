@@ -9,6 +9,10 @@ const config = {
 				sans: ['Inter Variable', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
 				serif: ['Roboto Slab Variable', 'sans-serif']
+			},
+			aspectRatio: {
+				'semi-video': '85 / 64',
+				'semi-square': '14 / 15'
 			}
 		}
 	},

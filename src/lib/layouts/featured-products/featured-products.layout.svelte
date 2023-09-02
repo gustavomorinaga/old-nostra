@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Carousel } from '$lib/components';
 	import { CardProduct } from '$lib/layouts';
+	import type { ComponentProps } from 'svelte';
 	import type { IProduct } from '$lib/ts';
-	import type { SwiperOptions } from 'swiper/types';
 
 	export let products: IProduct[];
 
 	const hasProducts = !!products.length;
 
-	const options: SwiperOptions = {
+	const options: ComponentProps<Carousel>['options'] = {
 		centeredSlides: false,
 		loop: false,
 		slidesPerView: 3,
@@ -16,13 +16,8 @@
 		autoHeight: false,
 		grabCursor: false,
 		allowTouchMove: false,
-		navigation: {
-			enabled: true
-		},
-		scrollbar: {
-			enabled: true,
-			draggable: true
-		},
+		navigation: { enabled: true },
+		scrollbar: { enabled: true, draggable: true },
 		injectStyles: [
 			`.swiper {
 				overflow-y: initial;
@@ -63,7 +58,7 @@
 		<Carousel class="products" {options} let:C>
 			{#each products as product (product._id)}
 				<C.Slide>
-					<a href="/product/{product.slug}">
+					<a href="/browse/{product.slug}">
 						<CardProduct {product} />
 					</a>
 				</C.Slide>

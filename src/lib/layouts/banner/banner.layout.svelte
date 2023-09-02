@@ -1,29 +1,21 @@
 <script lang="ts">
 	import { Carousel } from '$lib/components';
 	import { CardBanner } from '$lib/layouts';
-	import type { SwiperOptions } from 'swiper/types';
+	import type { ComponentProps } from 'svelte';
 
 	export let banners: { title: string; image: string; link: string }[];
 
 	const hasBanners = !!banners.length;
 
-	const options: SwiperOptions = {
+	const options: ComponentProps<Carousel>['options'] = {
 		centeredSlides: true,
 		loop: true,
 		slidesPerView: 1,
-		autoHeight: false,
-		grabCursor: false,
 		allowTouchMove: false,
 		effect: 'fade',
-		navigation: {
-			enabled: true
-		},
-		pagination: {
-			clickable: true
-		},
-		autoplay: {
-			delay: 5000
-		},
+		navigation: { enabled: true },
+		pagination: { clickable: true },
+		autoplay: { delay: 5000 },
 		injectStyles: [
 			`.swiper-button-prev, .swiper-button-next {
 				--swiper-navigation-size: 1rem;
@@ -65,6 +57,6 @@
 
 <style lang="scss" global>
 	.banners {
-		@apply rounded-box shadow-md;
+		@apply rounded-box mb-16 h-[50vh] shadow-md;
 	}
 </style>

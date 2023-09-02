@@ -85,7 +85,7 @@
 			{/each}
 		</div>
 
-		<hr class="divider" />
+		<hr />
 
 		<small>Copyright &copy; 2023 Nostra, All right reserved</small>
 	</div>

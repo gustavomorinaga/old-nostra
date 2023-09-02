@@ -62,8 +62,7 @@
 		@apply card card-compact rounded-none bg-base-100 p-0;
 
 		& > figure {
-			@apply rounded-box shadow;
-			aspect-ratio: 14 / 15;
+			@apply rounded-box aspect-semi-square shadow;
 
 			& > img {
 				@apply w-full;

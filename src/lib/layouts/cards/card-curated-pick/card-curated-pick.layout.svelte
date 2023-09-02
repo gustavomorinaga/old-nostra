@@ -27,7 +27,7 @@
 		before:hidden after:absolute after:inset-0 after:bg-gradient-to-t after:from-primary-focus;
 
 		& > figure {
-			aspect-ratio: 14 / 15;
+			@apply aspect-semi-square;
 
 			& > img {
 				@apply w-full;
