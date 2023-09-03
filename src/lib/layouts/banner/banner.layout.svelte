@@ -57,6 +57,6 @@
 
 <style lang="scss" global>
 	.banners {
-		@apply rounded-box mb-16 h-[50vh] shadow-md;
+		@apply rounded-box mb-16 h-[40vh] shadow-md;
 	}
 </style>
