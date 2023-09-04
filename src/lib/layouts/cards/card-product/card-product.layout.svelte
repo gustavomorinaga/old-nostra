@@ -30,20 +30,12 @@
 				<span class="price out-of-stock">Out of stock</span>
 			{:else}
 				<span class="price">
-					{currencyFormatter({
-						value: variants?.at(0)?.price || 0,
-						locale: 'en-US',
-						options: { currency: 'USD' }
-					})}
+					{currencyFormatter({ value: variants?.at(0)?.price || 0 })}
 				</span>
 
 				{#if hasDiscount}
 					<span class="original-price">
-						{currencyFormatter({
-							value: variants?.at(0)?.originalPrice || 0,
-							locale: 'en-US',
-							options: { currency: 'USD' }
-						})}
+						{currencyFormatter({ value: variants?.at(0)?.originalPrice || 0 })}
 					</span>
 				{/if}
 			{/if}
@@ -100,7 +92,7 @@
 
 			& > div.card-actions {
 				& > button {
-					@apply btn-primary btn-square btn;
+					@apply btn btn-square btn-primary;
 
 					& > iconify-icon {
 						@apply text-xl;

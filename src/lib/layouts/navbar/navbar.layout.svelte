@@ -34,7 +34,7 @@
 	];
 </script>
 
-<header>
+<header class="navbar-container">
 	<nav>
 		<div class="navbar-start">
 			<a class="logo" href="/">
@@ -44,26 +44,28 @@
 			</a>
 		</div>
 
-		<ul class="navbar-center">
-			{#each routes as route}
-				<li>
-					{#if !route?.paths?.length}
-						<a href={route.link}>{route.name}</a>
-					{:else}
-						<details>
-							<summary>{route.name}</summary>
-							<ul>
-								{#each route.paths as path}
-									<li>
-										<a href={path.link}>{path.name}</a>
-									</li>
-								{/each}
-							</ul>
-						</details>
-					{/if}
-				</li>
-			{/each}
-		</ul>
+		<div class="navbar-center">
+			<ul class="menu menu-horizontal">
+				{#each routes as route}
+					<li>
+						{#if !route?.paths?.length}
+							<a href={route.link}>{route.name}</a>
+						{:else}
+							<details>
+								<summary>{route.name}</summary>
+								<ul>
+									{#each route.paths as path}
+										<li>
+											<a href={path.link}>{path.name}</a>
+										</li>
+									{/each}
+								</ul>
+							</details>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</div>
 
 		<div class="navbar-end">
 			<label class="search-bar">
@@ -81,8 +83,8 @@
 	</nav>
 </header>
 
-<style lang="scss">
-	header {
+<style lang="scss" global>
+	header.navbar-container {
 		@apply sticky top-0 z-50 bg-base-100;
 
 		& nav {
@@ -100,15 +102,17 @@
 				}
 			}
 
-			& > ul.navbar-center {
-				@apply menu menu-horizontal font-semibold;
+			& > div.navbar-center {
+				& > ul {
+					@apply font-semibold;
+				}
 			}
 
 			& > div.navbar-end {
 				@apply gap-1;
 
 				& > label.search-bar {
-					@apply input-bordered input input-sm join items-center overflow-hidden
+					@apply input join input-bordered input-sm items-center overflow-hidden
 					focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-base-200;
 
 					& > * {
@@ -121,7 +125,7 @@
 				}
 
 				& > a {
-					@apply btn-ghost btn-square btn-sm btn w-fit px-2;
+					@apply btn btn-square btn-ghost btn-sm w-fit px-2;
 
 					& > iconify-icon {
 						@apply text-base;

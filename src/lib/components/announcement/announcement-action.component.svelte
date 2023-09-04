@@ -2,12 +2,12 @@
 	export let title: string;
 </script>
 
-<button on:click {title}>
+<button class="announcement-action" type="button" on:click {title}>
 	<slot />
 </button>
 
-<style lang="scss">
-	button {
-		@apply btn-primary btn-sm btn w-fit p-2;
+<style lang="scss" global>
+	button.announcement-action {
+		@apply btn btn-primary btn-sm w-fit p-2;
 	}
 </style>

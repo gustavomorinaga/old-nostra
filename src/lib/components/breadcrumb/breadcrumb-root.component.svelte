@@ -1,12 +1,12 @@
-<div class="breadcrumbs {$$restProps.class || ''}">
+<nav class="breadcrumbs {$$restProps.class || ''}">
 	<ul>
 		<slot />
 	</ul>
-</div>
+</nav>
 
 <style lang="scss" global>
-	div.breadcrumbs {
-		@apply font-heading text-sm;
+	nav.breadcrumbs {
+		@apply mb-4 font-heading text-sm;
 
 		& > ul {
 			& > li {

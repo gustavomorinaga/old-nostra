@@ -1,46 +1,30 @@
 <script lang="ts">
-	export let value = 1;
-	export let readonly = true;
+	import { default as Root } from './rating-root.component.svelte';
+	import { default as Star } from './rating-star.component.svelte';
+	import { default as Wrapper } from './rating-wrapper.component.svelte';
+	import { default as Legend } from './rating-legend.component.svelte';
 
-	const stars = 5;
+	import { generateDOMId } from '$lib/utils';
+
+	export let stars = 5;
+	export let value = 0;
+	export let readonly = false;
+
+	const groupId = generateDOMId();
 </script>
 
-<div class="rating">
-	{#each Array(stars) as _, index}
-		<input
-			type="radio"
-			name="rating"
-			class="half-1 bg-amber-500"
-			checked={value === (index + 1) / 2}
-			{readonly}
-		/>
-		<input
-			type="radio"
-			name="rating"
-			class="half-2 bg-amber-500"
-			checked={value === index + 1}
-			{readonly}
-		/>
-	{/each}
-</div>
+<Root {groupId} class={$$restProps.class || ''} {readonly}>
+	<Wrapper {readonly}>
+		{@const isEmpty = value === 0}
+		<Star {groupId} {isEmpty} isHidden />
 
-<style lang="scss">
-	div.rating {
-		@apply rating-half;
+		{#each Array(stars) as _, index}
+			{@const isHalf = Math.round(value * 2) / 2 === index + 0.5}
+			{@const isWhole = value === index + 1}
 
-		& > input[type='radio'] {
-			@apply mask mask-star;
+			<Star {groupId} {isHalf} {isWhole} />
+		{/each}
+	</Wrapper>
 
-			&.half-1 {
-				@apply mask-half-1;
-			}
-			&.half-2 {
-				@apply mask-half-2;
-			}
-
-			&:read-only {
-				@apply pointer-events-none cursor-default;
-			}
-		}
-	}
-</style>
+	<Legend>{`(${value})`}</Legend>
+</Root>

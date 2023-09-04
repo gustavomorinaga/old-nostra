@@ -44,9 +44,9 @@
 	</div>
 </section>
 
-<style lang="scss">
+<style lang="scss" global>
 	section.profile {
-		@apply card-bordered card card-compact mb-4 bg-base-100;
+		@apply card card-bordered card-compact mb-4 bg-base-100;
 
 		& > figure {
 			@apply mx-2 mt-2 h-40 rounded-lg bg-base-300;
@@ -65,7 +65,7 @@
 						@apply translate-x-0 translate-y-0;
 
 						& > button {
-							@apply btn-accent btn-sm btn w-fit px-2;
+							@apply btn btn-accent btn-sm w-fit px-2;
 
 							& > iconify-icon {
 								@apply text-base;
@@ -87,7 +87,7 @@
 				}
 
 				& > button {
-					@apply btn-ghost btn-sm btn w-fit border-base-200 px-2;
+					@apply btn btn-ghost btn-sm w-fit border-base-200 px-2;
 
 					& > iconify-icon {
 						@apply text-base;

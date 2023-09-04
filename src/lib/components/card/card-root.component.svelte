@@ -6,7 +6,7 @@
 	<slot />
 </svelte:element>
 
-<style lang="scss">
+<style lang="scss" global>
 	.card {
 		@apply card-compact;
 	}

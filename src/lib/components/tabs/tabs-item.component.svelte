@@ -3,9 +3,11 @@
 	export let link: string;
 </script>
 
-<a class="tab {$$restProps.class || ''}" class:tab-active={active} href={link}>
-	<slot />
-</a>
+<li>
+	<a class="tab {$$restProps.class || ''}" class:tab-active={active} href={link}>
+		<slot />
+	</a>
+</li>
 
 <style lang="scss">
 	a.tab {

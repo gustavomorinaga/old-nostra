@@ -25,26 +25,18 @@
 	<article>
 		<h1>{product.name}</h1>
 
-		<Rating />
+		<Rating value={4.5} readonly />
 
 		{#if currentVariant.status === 'out-of-stock'}
 			<span class="price out-of-stock">Out of stock</span>
 		{:else}
 			<span class="price">
-				{currencyFormatter({
-					value: currentVariant.price || 0,
-					locale: 'en-US',
-					options: { currency: 'USD' }
-				})}
+				{currencyFormatter({ value: currentVariant.price })}
 			</span>
 
 			{#if hasDiscount}
 				<span class="original-price">
-					{currencyFormatter({
-						value: currentVariant.originalPrice || 0,
-						locale: 'en-US',
-						options: { currency: 'USD' }
-					})}
+					{currencyFormatter({ value: currentVariant.originalPrice })}
 				</span>
 			{/if}
 		{/if}
@@ -53,7 +45,7 @@
 	</article>
 </section>
 
-<style lang="scss">
+<style lang="scss" global>
 	section.product-detail {
 		@apply mb-8 grid grid-cols-2 gap-4;
 
@@ -66,8 +58,12 @@
 				@apply mb-4 text-2xl font-bold;
 			}
 
+			& > fieldset.rating {
+				@apply mb-6;
+			}
+
 			& > span.price {
-				@apply font-heading text-2xl font-bold tabular-nums text-primary;
+				@apply block font-heading text-3xl font-bold tabular-nums text-primary;
 
 				&.unavailable {
 					@apply text-error;
