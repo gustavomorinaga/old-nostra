@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { Breadcrumb } from '$lib/components';
-	import { ProductDetail } from '$lib/layouts';
+	import { ProductDetail, RelatedProductsLayout } from '$lib/layouts';
 
 	export let data;
-	const { product } = data;
+	const { product, relatedProducts } = data;
 </script>
 
 <Breadcrumb class="product-breadcrumb" let:B>
@@ -14,8 +14,4 @@
 
 <ProductDetail {product} />
 
-<style lang="scss" global>
-	div.product-breadcrumb {
-		@apply mb-8;
-	}
-</style>
+<RelatedProductsLayout products={relatedProducts.data} />

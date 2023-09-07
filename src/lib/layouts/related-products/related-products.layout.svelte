@@ -11,13 +11,12 @@
 	const options: ComponentProps<Carousel>['options'] = {
 		centeredSlides: false,
 		loop: false,
-		slidesPerView: 3,
+		slidesPerView: 4,
 		spaceBetween: 24,
 		autoHeight: false,
 		grabCursor: false,
 		allowTouchMove: false,
 		navigation: { enabled: true },
-		scrollbar: { enabled: true, draggable: true },
 		injectStyles: [
 			`.swiper {
 				overflow-y: initial;
@@ -38,21 +37,15 @@
 			.swiper-button-next {
 				right: 0;
 				border-radius: 0 0.5rem 0.5rem 0;
-			}`,
-			`.swiper-scrollbar {
-				--swiper-scrollbar-size: 0.5rem;
-				--swiper-scrollbar-sides-offset: 25%;
-				--swiper-scrollbar-drag-bg-color: hsl(var(--p) / 1);
-				--swiper-scrollbar-bg-color: hsl(var(--b3) / 1);
 			}`
 		]
 	};
 </script>
 
 {#if hasProducts}
-	<section class="featured-products">
+	<section class="related-products">
 		<header>
-			<h2>Featured Products</h2>
+			<h2>Related Products</h2>
 		</header>
 
 		<Carousel class="products" {options} let:C>
@@ -68,7 +61,7 @@
 {/if}
 
 <style lang="scss">
-	section.featured-products {
+	section.related-products {
 		@apply mb-16 block;
 
 		& header {

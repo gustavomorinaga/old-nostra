@@ -1,12 +1,16 @@
-<script>
+<script lang="ts">
 	import 'iconify-icon';
 	import '../lib/styles/app.style.scss';
+	import { onNavigate } from '$app/navigation';
 	import { Announcement } from '$lib/components';
-	import { FooterLayout, NavbarLayout } from '$lib/layouts';
+	import { FooterLayout, MainLayout, NavbarLayout } from '$lib/layouts';
+	import { startViewTransition } from '$lib/utils';
 
 	let showAnnouncement = true;
 
 	const handleAnnouncement = () => (showAnnouncement = !showAnnouncement);
+
+	onNavigate(startViewTransition);
 </script>
 
 <Announcement let:A show={showAnnouncement}>
@@ -21,14 +25,8 @@
 
 <NavbarLayout />
 
-<main>
+<MainLayout>
 	<slot />
-</main>
+</MainLayout>
 
 <FooterLayout />
-
-<style lang="scss">
-	main {
-		@apply mx-auto min-h-screen max-w-6xl p-4;
-	}
-</style>
