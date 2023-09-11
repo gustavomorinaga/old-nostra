@@ -4,7 +4,12 @@
 </script>
 
 <li>
-	<a class="tab {$$restProps.class || ''}" class:tab-active={active} href={link}>
+	<a
+		class="tab {$$restProps.class || ''}"
+		class:tab-active={active}
+		href={link}
+		aria-current={active ? 'page' : 'false'}
+	>
 		<slot />
 	</a>
 </li>

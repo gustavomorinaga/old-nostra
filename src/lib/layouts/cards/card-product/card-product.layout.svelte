@@ -14,7 +14,7 @@
 </script>
 
 <Card class="product" as="article" let:C>
-	<C.Figure src={MenJPG} alt={name} />
+	<C.Figure src={MenJPG} alt={name} style="--product-image: image-{name}" />
 
 	{#if hasDiscount}
 		<span class="badge">SALE</span>

@@ -86,6 +86,7 @@
 <style lang="scss" global>
 	header.navbar-container {
 		@apply z-50 bg-base-100;
+		view-transition-name: navbar;
 
 		& nav {
 			@apply navbar mx-auto max-w-6xl justify-between px-4;

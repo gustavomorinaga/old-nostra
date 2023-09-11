@@ -3,6 +3,6 @@
 	export let alt: string;
 </script>
 
-<figure>
+<figure {...$$restProps}>
 	<img {src} {alt} />
 </figure>

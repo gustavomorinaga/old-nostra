@@ -39,7 +39,7 @@
 		{#each photos as photo}
 			<C.Slide>
 				<figure class="photo">
-					<img src={photo.uri} alt={photo.alt} />
+					<img src={photo.uri} alt={photo.alt} style:--product-image="image-{photo.alt}" />
 				</figure>
 			</C.Slide>
 		{/each}
@@ -75,6 +75,7 @@
 
 				& > img {
 					@apply object-top;
+					view-transition-name: var(--product-image);
 				}
 			}
 		}

@@ -121,6 +121,7 @@
 <style lang="scss">
 	footer {
 		@apply mt-16 bg-base-200 p-10;
+		view-transition-name: footer;
 
 		& > div.wrapper {
 			@apply mx-auto max-w-6xl text-base-content text-opacity-75;

@@ -14,8 +14,8 @@
 
 	const photos = [
 		{ uri: MenJPG, alt: 'Men' },
-		{ uri: WomenJPG, alt: 'Men' },
-		{ uri: CasualJPG, alt: 'Men' }
+		{ uri: WomenJPG, alt: 'Women' },
+		{ uri: CasualJPG, alt: 'Casual' }
 	];
 </script>
 
