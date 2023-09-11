@@ -2,15 +2,15 @@
 	import { CasualJPG, MenJPG, WomenJPG } from '$lib/assets';
 	import { Rating } from '$lib/components';
 	import { Gallery } from '$lib/layouts';
-	import type { IProduct, IProductVariant } from '$lib/ts';
 	import { currencyFormatter } from '$lib/utils';
+	import type { IProduct, IProductVariant } from '$lib/ts';
 
 	export let product: IProduct;
 
-	let currentVariant = product.variants.at(0) as IProductVariant;
-	let hasDiscount =
-		!!currentVariant.originalPrice &&
-		(currentVariant.originalPrice as number) > (currentVariant.price as number);
+	$: ({ variants } = product);
+	$: currentVariant = variants.at(0) as IProductVariant;
+	$: hasVariants = !!variants.length;
+	$: hasDiscount = !!currentVariant?.originalPrice;
 
 	const photos = [
 		{ uri: MenJPG, alt: 'Men' },
@@ -27,7 +27,9 @@
 
 		<Rating value={4.5} readonly />
 
-		{#if currentVariant.status === 'out-of-stock'}
+		{#if !hasVariants}
+			<span class="price unavailable">Unavailable</span>
+		{:else if currentVariant.status === 'out-of-stock'}
 			<span class="price out-of-stock">Out of stock</span>
 		{:else}
 			<span class="price">
@@ -36,7 +38,7 @@
 
 			{#if hasDiscount}
 				<span class="original-price">
-					{currencyFormatter({ value: currentVariant.originalPrice })}
+					{currencyFormatter({ value: currentVariant.originalPrice || 0 })}
 				</span>
 			{/if}
 		{/if}

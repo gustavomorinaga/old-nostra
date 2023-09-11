@@ -3,7 +3,8 @@
 	import { ProductDetail, RelatedProductsLayout } from '$lib/layouts';
 
 	export let data;
-	const { product, relatedProducts } = data;
+
+	$: ({ product, relatedProducts } = data);
 </script>
 
 <Breadcrumb class="product-breadcrumb" let:B>

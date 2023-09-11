@@ -15,7 +15,7 @@ export interface IProductVariant extends TDocument {
 	name: string;
 	sku: string;
 	price: number;
-	originalPrice: number;
+	originalPrice?: number;
 	stock: number;
 	status?: 'low-stock' | 'out-of-stock' | 'in-stock';
 	active?: boolean;

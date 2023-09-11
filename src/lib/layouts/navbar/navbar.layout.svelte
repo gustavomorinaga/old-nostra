@@ -85,7 +85,7 @@
 
 <style lang="scss" global>
 	header.navbar-container {
-		@apply sticky top-0 z-50 bg-base-100;
+		@apply z-50 bg-base-100;
 
 		& nav {
 			@apply navbar mx-auto max-w-6xl justify-between px-4;

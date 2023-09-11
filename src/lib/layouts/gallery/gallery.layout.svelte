@@ -71,7 +71,7 @@
 			@apply rounded-box mb-4 shadow-md;
 
 			& figure.photo {
-				@apply aspect-semi-video;
+				@apply aspect-square;
 
 				& > img {
 					@apply object-top;

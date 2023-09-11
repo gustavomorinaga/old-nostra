@@ -54,6 +54,21 @@
 			]
 		}
 	];
+
+	const paymentMethods = [
+		{
+			name: 'Mastercard',
+			icon: 'logos:mastercard'
+		},
+		{
+			name: 'Visa',
+			icon: 'logos:visa'
+		},
+		{
+			name: 'Paypal',
+			icon: 'logos:paypal'
+		}
+	];
 </script>
 
 <footer>
@@ -83,6 +98,18 @@
 					</ul>
 				</div>
 			{/each}
+
+			<div>
+				<span>Payment Methods</span>
+
+				<ul class="payment-methods">
+					{#each paymentMethods as paymentMethod}
+						<li>
+							<iconify-icon icon={paymentMethod.icon} />
+						</li>
+					{/each}
+				</ul>
+			</div>
 		</div>
 
 		<hr />
@@ -121,8 +148,14 @@
 					& > ul {
 						@apply flex flex-col gap-2;
 
+						&.payment-methods {
+							@apply flex-row gap-4;
+						}
+
 						& > li {
-							@apply link-hover link;
+							& > a {
+								@apply link-hover link;
+							}
 						}
 					}
 				}
