@@ -5,6 +5,6 @@
 	const T = { Item };
 </script>
 
-<Root class={$$restProps.class || ''}>
+<Root {...$$restProps}>
 	<slot {T} />
 </Root>

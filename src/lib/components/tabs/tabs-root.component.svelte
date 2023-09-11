@@ -1,5 +1,5 @@
 <nav>
-	<ul class="tabs tabs-boxed {$$restProps.class || ''}">
+	<ul class="tabs-boxed tabs {$$restProps.class || ''}">
 		<slot />
 	</ul>
 </nav>

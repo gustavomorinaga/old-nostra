@@ -8,6 +8,6 @@
 	const C = { Slide };
 </script>
 
-<Root class={$$restProps.class || ''} {options}>
+<Root {...$$restProps} {options}>
 	<slot {C} />
 </Root>

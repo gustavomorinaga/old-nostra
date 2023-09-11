@@ -14,7 +14,7 @@
 	});
 </script>
 
-<swiper-container bind:this={ref} init="false" class={$$restProps.class || ''}>
+<swiper-container bind:this={ref} init="false" {...$$restProps}>
 	<slot />
 </swiper-container>
 

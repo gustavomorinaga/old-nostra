@@ -1,3 +1,3 @@
-<header class={$$restProps.class || ''}>
+<header {...$$restProps}>
 	<slot />
 </header>

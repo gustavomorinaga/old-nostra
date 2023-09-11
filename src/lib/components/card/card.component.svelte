@@ -12,6 +12,6 @@
 	const C = { Figure, Body, Header, Title, Actions };
 </script>
 
-<Root class={$$restProps.class || ''} {as}>
+<Root {...$$restProps} {as}>
 	<slot {C} />
 </Root>
