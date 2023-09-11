@@ -1,4 +1,4 @@
-<nav class="breadcrumbs {$$restProps.class || ''}">
+<nav {...$$restProps} class="breadcrumbs">
 	<ul>
 		<slot />
 	</ul>

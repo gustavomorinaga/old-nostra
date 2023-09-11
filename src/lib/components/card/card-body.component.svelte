@@ -1,3 +1,3 @@
-<div class="card-body {$$restProps.class || ''}">
+<div {...$$restProps} class="card-body">
 	<slot />
 </div>

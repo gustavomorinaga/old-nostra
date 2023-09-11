@@ -1,4 +1,4 @@
-<swiper-slide class="slide {$$restProps.class || ''}">
+<swiper-slide {...$$restProps} class="slide">
 	<slot />
 </swiper-slide>
 

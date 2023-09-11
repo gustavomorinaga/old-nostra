@@ -5,7 +5,8 @@
 
 <li>
 	<a
-		class="tab {$$restProps.class || ''}"
+		{...$$restProps}
+		class="tab"
 		class:tab-active={active}
 		href={link}
 		aria-current={active ? 'page' : 'false'}

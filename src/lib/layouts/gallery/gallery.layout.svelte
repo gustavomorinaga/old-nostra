@@ -34,12 +34,12 @@
 	];
 </script>
 
-<section class="gallery">
+<section {...$$restProps} class="gallery">
 	<Carousel class="viewer" options={viewerOptions} let:C>
 		{#each photos as photo}
 			<C.Slide>
 				<figure class="photo">
-					<img src={photo.uri} alt={photo.alt} style:--product-image="image-{photo.alt}" />
+					<img src={photo.uri} alt={photo.alt} />
 				</figure>
 			</C.Slide>
 		{/each}
@@ -75,7 +75,6 @@
 
 				& > img {
 					@apply object-top;
-					view-transition-name: var(--product-image);
 				}
 			}
 		}

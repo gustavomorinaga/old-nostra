@@ -13,7 +13,7 @@
 	const groupId = generateDOMId();
 </script>
 
-<Root {groupId} {...$$restProps} {readonly}>
+<Root {...$$restProps} {groupId} {readonly}>
 	<Wrapper {readonly}>
 		{@const isEmpty = value === 0}
 		<Star {groupId} {isEmpty} isHidden />

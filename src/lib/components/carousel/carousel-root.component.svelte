@@ -14,7 +14,7 @@
 	});
 </script>
 
-<swiper-container bind:this={ref} init="false" {...$$restProps}>
+<swiper-container {...$$restProps} bind:this={ref} init="false">
 	<slot />
 </swiper-container>
 
