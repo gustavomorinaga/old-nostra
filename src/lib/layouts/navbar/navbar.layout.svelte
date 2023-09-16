@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { LogoMinSVG } from '$lib/assets';
+	import { clickoutside } from '@svelte-put/clickoutside';
 
 	const routes = [
 		{
@@ -32,6 +33,9 @@
 			link: '/brands'
 		}
 	];
+
+	const handleSubmenuOutsideClick = (event: CustomEvent<MouseEvent>) =>
+		((event.target as HTMLDetailsElement).open = false);
 </script>
 
 <header class="navbar-container">
@@ -51,7 +55,7 @@
 						{#if !route?.paths?.length}
 							<a href={route.link}>{route.name}</a>
 						{:else}
-							<details>
+							<details use:clickoutside on:clickoutside={handleSubmenuOutsideClick}>
 								<summary>{route.name}</summary>
 								<ul>
 									{#each route.paths as path}
@@ -85,7 +89,7 @@
 
 <style lang="scss" global>
 	header.navbar-container {
-		@apply z-50 bg-base-100;
+		@apply relative z-50 bg-base-100;
 		view-transition-name: navbar;
 
 		& nav {

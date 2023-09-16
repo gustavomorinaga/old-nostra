@@ -20,6 +20,9 @@ devDependencies:
   '@playwright/test':
     specifier: 1.37.1
     version: 1.37.1
+  '@svelte-put/clickoutside':
+    specifier: 3.0.0
+    version: 3.0.0
   '@sveltejs/adapter-auto':
     specifier: 2.1.0
     version: 2.1.0(@sveltejs/kit@1.24.0)
@@ -481,6 +484,10 @@ packages:
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
+    dev: true
+
+  /@svelte-put/clickoutside@3.0.0:
+    resolution: {integrity: sha512-a2aA0+uMo2LGK4bwQE+etra57cJuqQsXRkI0IM+cPzjIowqUg5CMSSeQ6YsXBJUdtzm/s6WQKcmoswK/875wtA==}
     dev: true
 
   /@sveltejs/adapter-auto@2.1.0(@sveltejs/kit@1.24.0):
