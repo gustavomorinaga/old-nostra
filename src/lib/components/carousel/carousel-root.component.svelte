@@ -5,7 +5,7 @@
 
 	let ref: HTMLElement & { initialize: () => void };
 
-	export let options: SwiperOptions = {};
+	export let options: SwiperOptions;
 
 	onMount(() => {
 		register();

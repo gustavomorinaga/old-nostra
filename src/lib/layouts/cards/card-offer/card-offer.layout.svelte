@@ -34,7 +34,7 @@
 		}
 
 		& > div.card-body {
-			@apply selection:bg-base-100 selection:text-primary;
+			@apply justify-center selection:bg-base-100 selection:text-primary;
 
 			& > h5 {
 				@apply card-title text-sm uppercase leading-normal text-base-300;
@@ -48,7 +48,7 @@
 				@apply mt-4;
 
 				& > a {
-					@apply btn-accent btn;
+					@apply btn btn-accent;
 
 					& > iconify-icon {
 						@apply text-xl;

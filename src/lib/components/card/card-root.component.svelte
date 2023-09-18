@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let as: 'section' | 'article' | 'div' = 'section';
+	export let as: 'section' | 'article' | 'div';
 </script>
 
 <svelte:element this={as} class="card {$$restProps.class || ''}">
