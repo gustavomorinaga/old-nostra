@@ -1,5 +1,12 @@
 <script lang="ts">
 	import { Card } from '$lib/components';
+	import { superForm } from 'sveltekit-superforms/client';
+	import type { managePasswordSchema } from '$lib/schemas';
+	import type { SuperValidated } from 'sveltekit-superforms';
+
+	export let data: SuperValidated<typeof managePasswordSchema>;
+
+	const { enhance, errors } = superForm(data);
 </script>
 
 <Card class="manage-password" let:C>
@@ -9,31 +16,46 @@
 			<p>Here you can manage your password</p>
 		</C.Header>
 
-		<form id="managePassword" method="POST">
+		<form id="managePassword" method="POST" use:enhance>
 			<div class="form-control">
 				<label for="oldPassword">
 					<span>Old password</span>
 				</label>
 				<input type="password" name="oldPassword" id="oldPassword" />
+				{#if $errors.oldPassword}
+					<label for="oldPassword">
+						<span class="error">{$errors.oldPassword}</span>
+					</label>
+				{/if}
 			</div>
 			<div class="form-control">
 				<label for="newPassword">
 					<span>New password</span>
 				</label>
 				<input type="password" name="newPassword" id="newPassword" />
+				{#if $errors.newPassword}
+					<label for="newPassword">
+						<span class="error">{$errors.newPassword}</span>
+					</label>
+				{/if}
 			</div>
 			<div class="form-control">
 				<label for="confirmNewPassword">
 					<span>Confirm new password</span>
 				</label>
 				<input type="password" name="confirmNewPassword" id="confirmNewPassword" />
+				{#if $errors.confirmNewPassword}
+					<label for="confirmNewPassword">
+						<span class="error">{$errors.confirmNewPassword}</span>
+					</label>
+				{/if}
 			</div>
 		</form>
 
 		<C.Actions>
 			<p>
-				Make sure it's at least 15 characters OR at least 8 characters including a number and a
-				lowercase letter.
+				Make sure it's must contain at least one uppercase letter, one lowercase letter, one number
+				and one special character.
 			</p>
 			<button type="submit" form="managePassword">Save</button>
 		</C.Actions>
@@ -42,7 +64,7 @@
 
 <style lang="scss" global>
 	section.manage-password {
-		@apply card-bordered card card-compact overflow-hidden;
+		@apply card card-bordered card-compact overflow-hidden;
 
 		& > div.card-body {
 			& > header {
@@ -63,12 +85,18 @@
 						@apply label;
 
 						& > span {
-							@apply label-text;
+							&:not(.error) {
+								@apply label-text;
+							}
+
+							&.error {
+								@apply label-text-alt text-error;
+							}
 						}
 					}
 
 					& input {
-						@apply input-bordered input;
+						@apply input input-bordered;
 					}
 				}
 			}
@@ -81,7 +109,7 @@
 				}
 
 				& > button {
-					@apply btn-primary btn-sm btn;
+					@apply btn btn-primary btn-sm;
 				}
 			}
 		}
